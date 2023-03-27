@@ -1,0 +1,110 @@
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5
+}
+
+.mr {
+  margin-right: 16px;
+}
+
+.mb {
+  margin-bottom: 8px;
+}
+
+.wrapper {
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.card-columns-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hand-column {
+  max-width: 700px;
+}
+
+.in-play-section {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.selected-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.active-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hand-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.discarded-section {
+  margin-bottom: 32px;
+}
+
+.discarded-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.burned-section {
+  margin-bottom: 32px;
+}
+
+.burned-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card-wrapper {
+  max-width: 200px;
+  position: relative;
+}
+
+.card-wrapper:hover > .card-overlay {
+  display: block;
+}
+
+.card-overlay {
+  display: none;
+
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.card-overlay-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;  
+}
+
+.card-overlay-actions > button {
+  width: 60%;
+  cursor: pointer;
+}
