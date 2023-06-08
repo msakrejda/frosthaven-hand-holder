@@ -32,6 +32,9 @@ const BANNERSPEAR_CARDS: Card[] = [
   { characterClass: 'bannerspear', name: 'Pinning Charge', level: 2, imgUrl: '/assets/character/bannerspear/pinning-charge.jpeg' },
 ];
 
+const BANNERSPEAR_DECK_CARDS: Card[] = BANNERSPEAR_CARDS.filter((c) => {
+  return (c.level === 1 && c.name !== "Pincer Movement") || (c.name === "Meat Grinder")
+});
 
 type GameState = {
   library: Card[];
@@ -110,7 +113,7 @@ const GameDispatchContext = React.createContext<React.Dispatch<CardAction>>(() =
 function WithGameState({children}: { children: React.ReactNode }) {
   const [ gameState, dispatch ] = useReducer(updateGameState, {
     library: BANNERSPEAR_CARDS,
-    deck: BANNERSPEAR_CARDS.filter((c) => c.level === 1).map((c) => {
+    deck: BANNERSPEAR_DECK_CARDS.map((c) => {
       return {
         card: c,
         status: 'in hand' as const,
