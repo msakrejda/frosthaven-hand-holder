@@ -28,6 +28,8 @@ const BANNERSPEAR_CARDS: Card[] = [
   { characterClass: 'bannerspear', name: 'Set for the Charge', level: 1, imgUrl: '/assets/character/bannerspear/set-for-the-charge.jpeg' },
   { characterClass: 'bannerspear', name: 'Tip of the Spear', level: 1, imgUrl: '/assets/character/bannerspear/tip-of-the-spear.jpeg' },
   { characterClass: 'bannerspear', name: 'Unbreakable Wall', level: 1, imgUrl: '/assets/character/bannerspear/unbreakable-wall.jpeg' },
+  { characterClass: 'bannerspear', name: 'Meat Grinder', level: 2, imgUrl: '/assets/character/bannerspear/meat-grinder.jpeg' },
+  { characterClass: 'bannerspear', name: 'Pinning Charge', level: 2, imgUrl: '/assets/character/bannerspear/pinning-charge.jpeg' },
 ];
 
 
