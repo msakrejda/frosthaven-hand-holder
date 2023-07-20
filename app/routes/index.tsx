@@ -30,10 +30,14 @@ const BANNERSPEAR_CARDS: Card[] = [
   { characterClass: 'bannerspear', name: 'Unbreakable Wall', level: 1, imgUrl: '/assets/character/bannerspear/unbreakable-wall.jpeg' },
   { characterClass: 'bannerspear', name: 'Meat Grinder', level: 2, imgUrl: '/assets/character/bannerspear/meat-grinder.jpeg' },
   { characterClass: 'bannerspear', name: 'Pinning Charge', level: 2, imgUrl: '/assets/character/bannerspear/pinning-charge.jpeg' },
+  { characterClass: 'bannerspear', name: 'Head of the Hammer', level: 3, imgUrl: '/assets/character/bannerspear/head-of-the-hammer.jpeg' },
+  { characterClass: 'bannerspear', name: 'Let Them Come', level: 3, imgUrl: '/assets/character/bannerspear/let-them-come.jpeg' },
 ];
 
 const BANNERSPEAR_DECK_CARDS: Card[] = BANNERSPEAR_CARDS.filter((c) => {
-  return (c.level === 1 && c.name !== "Pincer Movement") || (c.name === "Meat Grinder")
+  return (c.level === 1 && c.name !== "Pincer Movement" && c.name !== "Deflecting Maneuver") ||
+    (c.name === "Meat Grinder") ||
+    (c.name === "Let Them Come")
 });
 
 type GameState = {
