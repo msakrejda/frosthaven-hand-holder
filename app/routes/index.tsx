@@ -83,9 +83,7 @@ function updateGameState(state: GameState, action: CardAction): GameState {
         ...state,
         shortRestCandidateBurn: undefined,
         deck: state.deck.map((c) => {
-          return c === burn
-            ? { ...c, status: "burned" }
-            : c;
+          return { ...c, status: c === burn ? "burned" : "in hand" }
         })
       }
     case "short_rest_redraw":
@@ -96,9 +94,7 @@ function updateGameState(state: GameState, action: CardAction): GameState {
         ...state,
         shortRestCandidateBurn: undefined,
         deck: state.deck.map((c) => {
-          return c === newBurn
-            ? { ...c, status: "burned" }
-            : c;
+          return { ...c, status: c === newBurn ? "burned" : "in hand" }
         })
       }
   }  
