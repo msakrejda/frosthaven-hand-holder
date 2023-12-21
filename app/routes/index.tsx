@@ -34,13 +34,16 @@ const BANNERSPEAR_CARDS: Card[] = [
   { characterClass: 'bannerspear', name: 'Let Them Come', level: 3, imgUrl: '/assets/character/bannerspear/let-them-come.jpeg' },
   { characterClass: 'bannerspear', name: 'Air Support', level: 4, imgUrl: '/assets/character/bannerspear/air-support.jpeg' },
   { characterClass: 'bannerspear', name: 'Boldening Blow', level: 4, imgUrl: '/assets/character/bannerspear/boldening-blow.jpeg' },
+  { characterClass: 'bannerspear', name: 'Hold the Line', level: 5, imgUrl: '/assets/character/bannerspear/hold-the-line.jpeg' },
+  { characterClass: 'bannerspear', name: 'Explosive Epicenter', level: 5, imgUrl: '/assets/character/bannerspear/explosive-epicenter.jpeg' },
 ];
 
 const BANNERSPEAR_DECK_CARDS: Card[] = BANNERSPEAR_CARDS.filter((c) => {
-  return (c.level === 1 && c.name !== "Pincer Movement" && c.name !== "Deflecting Maneuver" && c.name !== "Javelin") ||
+  return (c.level === 1 && c.name !== "Pincer Movement" && c.name !== "Deflecting Maneuver" && c.name !== "Javelin" && c.name !== "Unbreakable Wall") ||
     (c.name === "Meat Grinder") ||
     (c.name === "Let Them Come") ||
-    (c.name === "Air Support")
+    (c.name === "Air Support") ||
+    (c.name === "Explosive Epicenter")
 });
 
 type GameState = {
