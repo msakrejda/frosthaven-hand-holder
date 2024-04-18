@@ -38,15 +38,17 @@ const BANNERSPEAR_CARDS: Card[] = [
   { characterClass: 'bannerspear', name: 'Explosive Epicenter', level: 5, imgUrl: '/assets/character/bannerspear/explosive-epicenter.jpeg' },
   { characterClass: 'bannerspear', name: 'Barricade', level: 6, imgUrl: '/assets/character/bannerspear/barricade.jpeg' },
   { characterClass: 'bannerspear', name: 'Bolstering Shout', level: 6, imgUrl: '/assets/character/bannerspear/bolstering-shout.jpeg' },
+  { characterClass: 'bannerspear', name: 'Lead from Afar', level: 7, imgUrl: '/assets/character/bannerspear/lead-from-afar.jpeg' },
+  { characterClass: 'bannerspear', name: 'Tri-Thrust', level: 7, imgUrl: '/assets/character/bannerspear/tri-thrust.jpeg' },
 ];
 
 const BANNERSPEAR_DECK_CARDS: Card[] = BANNERSPEAR_CARDS.filter((c) => {
   return (c.level === 1 && ![ "Pincer Movement", "Deflecting Maneuver", "Javelin", "Unbreakable Wall", "Regroup"].includes(c.name)) ||
     (c.name === "Meat Grinder") ||
-    (c.name === "Let Them Come") ||
     (c.name === "Air Support") ||
     (c.name === "Explosive Epicenter") ||
-    (c.name === "Bolstering Shout")
+    (c.name === "Bolstering Shout") ||
+    (c.name === "Lead from Afar")
 });
 
 type GameState = {
