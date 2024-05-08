@@ -40,6 +40,8 @@ const BANNERSPEAR_CARDS: Card[] = [
   { characterClass: 'bannerspear', name: 'Bolstering Shout', level: 6, imgUrl: '/assets/character/bannerspear/bolstering-shout.jpeg' },
   { characterClass: 'bannerspear', name: 'Lead from Afar', level: 7, imgUrl: '/assets/character/bannerspear/lead-from-afar.jpeg' },
   { characterClass: 'bannerspear', name: 'Tri-Thrust', level: 7, imgUrl: '/assets/character/bannerspear/tri-thrust.jpeg' },
+  { characterClass: 'bannerspear', name: 'Sweeping Aid', level: 8, imgUrl: '/assets/character/bannerspear/sweeping-aid.jpeg' },
+  { characterClass: 'bannerspear', name: 'Taunting Howl', level: 8, imgUrl: '/assets/character/bannerspear/taunting-howl.jpeg' },
 ];
 
 const BANNERSPEAR_DECK_CARDS: Card[] = BANNERSPEAR_CARDS.filter((c) => {
