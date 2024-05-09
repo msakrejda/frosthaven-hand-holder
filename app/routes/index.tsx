@@ -45,12 +45,13 @@ const BANNERSPEAR_CARDS: Card[] = [
 ];
 
 const BANNERSPEAR_DECK_CARDS: Card[] = BANNERSPEAR_CARDS.filter((c) => {
-  return (c.level === 1 && ![ "Pincer Movement", "Deflecting Maneuver", "Javelin", "Unbreakable Wall", "Regroup"].includes(c.name)) ||
+  return (c.level === 1 && ![ "Pincer Movement", "Deflecting Maneuver", "Javelin", "Unbreakable Wall", "Regroup", "Rallying Cry" ].includes(c.name)) ||
     (c.name === "Meat Grinder") ||
     (c.name === "Air Support") ||
     (c.name === "Explosive Epicenter") ||
     (c.name === "Bolstering Shout") ||
-    (c.name === "Lead from Afar")
+    (c.name === "Lead from Afar") ||
+    (c.name === "Sweeping Aid")
 });
 
 type GameState = {
