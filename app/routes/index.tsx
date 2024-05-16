@@ -54,6 +54,34 @@ const BANNERSPEAR_DECK_CARDS: Card[] = BANNERSPEAR_CARDS.filter((c) => {
     (c.name === "Sweeping Aid")
 });
 
+
+const DEEPWRAITH_BACK = '/assets/character/deepwraith/back.jpeg';
+const DEEPWRAITH_MAT = '/assets/character/deepwraith/mat.jpeg';
+const DEEPWRAITH_MAT_BACK = '/assets/character/deepwraith/mat-back.jpeg';
+
+const DEEPWRAITH_CARDS: Card[] = [
+  { characterClass: 'deepwraith', name: 'Black Scythe', level: 1, imgUrl: '/assets/character/deepwraith/black-scythe.jpeg' },
+  { characterClass: 'deepwraith', name: 'Hollow Aura', level: 1, imgUrl: '/assets/character/deepwraith/hollow-aura.jpeg' },
+  { characterClass: 'deepwraith', name: 'Ink Cloud', level: 1, imgUrl: '/assets/character/deepwraith/ink-cloud.jpeg' },
+  { characterClass: 'deepwraith', name: 'Lacerating Stabs', level: 1, imgUrl: '/assets/character/deepwraith/lacerating-stabs.jpeg' },
+  { characterClass: 'deepwraith', name: 'Mantle of Dread', level: 1, imgUrl: '/assets/character/deepwraith/mantle-of-dread.jpeg' },
+  { characterClass: 'deepwraith', name: 'Skewer the Flesh', level: 1, imgUrl: '/assets/character/deepwraith/skewer-the-flesh.jpeg' },
+  { characterClass: 'deepwraith', name: 'Skull Collection', level: 1, imgUrl: '/assets/character/deepwraith/skull-collection.jpeg' },
+  { characterClass: 'deepwraith', name: 'Staring into the Abyss', level: 1, imgUrl: '/assets/character/deepwraith/staring-into-the-abyss.jpeg' },
+  { characterClass: 'deepwraith', name: 'Succumb to Fear', level: 1, imgUrl: '/assets/character/deepwraith/succumb-to-fear.jpeg' },
+  { characterClass: 'deepwraith', name: 'Tumultuous Panic', level: 1, imgUrl: '/assets/character/deepwraith/tumultuous-panic.jpeg' },
+  { characterClass: 'deepwraith', name: 'Haunting Brutality', level: 'x', imgUrl: '/assets/character/deepwraith/haunting-brutality.jpeg' },
+  { characterClass: 'deepwraith', name: 'Morbid Camouflage', level: 'x', imgUrl: '/assets/character/deepwraith/morbid-camouflage.jpeg' },
+  { characterClass: 'deepwraith', name: 'Soul Hunger', level: 'x', imgUrl: '/assets/character/deepwraith/soul-hunger.jpeg' },
+  { characterClass: 'deepwraith', name: 'Lie in Wait', level: 2, imgUrl: '/assets/character/deepwraith/lie-in-wait.jpeg' },
+  { characterClass: 'deepwraith', name: 'Slipping into Death', level: 2, imgUrl: '/assets/character/deepwraith/slipping-into-death.jpeg' },
+];
+
+const DEEPWRAITH_DECK_CARDS: Card[] = DEEPWRAITH_CARDS.filter((c) => {
+  return (c.level === 1 && ![ "Tumultuous Panic" ].includes(c.name)) ||
+    (c.name === "Slipping into Death")
+});
+
 type GameState = {
   library: Card[];
   deck: CardInPlay[];
@@ -126,8 +154,8 @@ const GameDispatchContext = React.createContext<React.Dispatch<CardAction>>(() =
 
 function WithGameState({children}: { children: React.ReactNode }) {
   const [ gameState, dispatch ] = useReducer(updateGameState, {
-    library: BANNERSPEAR_CARDS,
-    deck: BANNERSPEAR_DECK_CARDS.map((c) => {
+    library: DEEPWRAITH_CARDS,
+    deck: DEEPWRAITH_DECK_CARDS.map((c) => {
       return {
         card: c,
         status: 'in hand' as const,
@@ -308,11 +336,14 @@ function BurnedCards() {
 
 function CharacterMat() {
   return (
-    <img src={BANNERSPEAR_MAT} />
+    <div>
+      <img src={DEEPWRAITH_MAT} />
+      <img src={DEEPWRAITH_MAT_BACK} />
+    </div>
   )
 }
 
-type CharacterClass = "bannerspear";
+type CharacterClass = "bannerspear" | "deepwraith";
 
 type CardPlaceholder = {
   characterClass: CharacterClass;
@@ -379,7 +410,7 @@ function getOptions(card: CardInPlay, game: GameState): CardOptions {
 function CardPlaceholder() {
   return (
     <div className="card-wrapper">
-      <img src={BANNERSPEAR_BACK} />
+      <img src={DEEPWRAITH_BACK} />
     </div>    
   )
 }
