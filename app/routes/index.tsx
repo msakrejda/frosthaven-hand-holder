@@ -75,11 +75,15 @@ const DEEPWRAITH_CARDS: Card[] = [
   { characterClass: 'deepwraith', name: 'Soul Hunger', level: 'x', imgUrl: '/assets/character/deepwraith/soul-hunger.jpeg' },
   { characterClass: 'deepwraith', name: 'Lie in Wait', level: 2, imgUrl: '/assets/character/deepwraith/lie-in-wait.jpeg' },
   { characterClass: 'deepwraith', name: 'Slipping into Death', level: 2, imgUrl: '/assets/character/deepwraith/slipping-into-death.jpeg' },
+  { characterClass: 'deepwraith', name: 'Crippling Terror', level: 3, imgUrl: '/assets/character/deepwraith/crippling-terror.jpeg' },
+  { characterClass: 'deepwraith', name: 'Pinning Spines', level: 3, imgUrl: '/assets/character/deepwraith/pinning-spines.jpeg' },
 ];
 
 const DEEPWRAITH_DECK_CARDS: Card[] = DEEPWRAITH_CARDS.filter((c) => {
-  return (c.level === 1 && ![ "Tumultuous Panic" ].includes(c.name)) ||
-    (c.name === "Slipping into Death")
+  return (c.level === 1 && ![ "Tumultuous Panic", "Succumb to Fear", "Mantle of Dread" ].includes(c.name)) ||
+    (c.name === "Lie in Wait") ||
+    (c.name === "Morbid Camouflage") ||
+    (c.name === "Pinning Spines")
 });
 
 type GameState = {
